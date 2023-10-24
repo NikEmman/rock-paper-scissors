@@ -4,28 +4,41 @@ function getComputerChoice(){
     else if (number===2)   {return "Paper";} 
     else return "Scissors";
 };
-let playerSelection = prompt("Type your choice!","");
 
-
-let computerSelection= getComputerChoice();
-
-function playRound(string1, string2){ 
-    if(playerSelection.toLowerCase()!=="rock" || playerSelection.toLowerCase()!=="paper" ||playerSelection.toLowerCase()!=="scissors") {
-        playerSelection= prompt("Invalid answer, please choose between Rock, Paper or Scissors!","");
-    } 
-    string1=playerSelection.toLowerCase();
-    string2=computerSelection.toLowerCase();
-                
-    if (string1==="rock"&&string2==="paper" ||string1==="paper"&&string2==="scissors" || string1==="scissors"&&string2==="rock" ){
-            return `You lost! ${playerSelection} loses to ${computerSelection}.`;
-        }
-    else if(string1==="rock"&& string2==="scissors" ||string1==="paper"&&string2==="rock" || string1==="scissors"&&string2==="paper"){
-            return `You won!! ${playerSelection} wins over ${computerSelection}.`;
-        }
-    else {
-            return `It's a tie! You chose ${playerSelection} and opponent chose ${computerSelection} too.`;
-        } 
-     
+function getPlayerChoice(){
+    let pChoice = prompt("Type your choice!","");
+while(pChoice.toLowerCase()!=="rock" && pChoice.toLowerCase()!=="paper" && pChoice.toLowerCase()!=="scissors") {
+    pChoice = prompt("Invalid answer, please choose between Rock, Paper or Scissors!","");
+} 
+return pChoice;
 }
 
-console.log (playRound(playerSelection,computerSelection));
+
+function playRound(){
+    string1 = getPlayerChoice().toLowerCase();
+    
+    string2 = getComputerChoice().toLowerCase();    
+    
+                
+    if (string1==="rock"&&string2==="paper" ||string1==="paper"&&string2==="scissors" || string1==="scissors"&&string2==="rock" ){
+            return `You lost! ${string1} loses to ${string2}.`;
+        }
+    else if(string1==="rock"&& string2==="scissors" ||string1==="paper"&&string2==="rock" || string1==="scissors"&&string2==="paper"){
+            return `You won!! ${string1} wins over ${string2}.`;
+        }
+    else {
+            return `It's a tie! You chose ${string1} and opponent chose ${string2} too.`;
+        } 
+    
+}
+
+function game(x){    
+    for ( let i=0; i<x; i++){
+        
+         console.log (playRound());              
+    }   
+    
+}
+game(5);
+
+
