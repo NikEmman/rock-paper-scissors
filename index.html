@@ -5,14 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js" ></script>
 </head>
 <body>
-    <button id="rock">Rock</button>
-    
-    <button id="paper">Paper</button>
-    
-    <button id="scissors">Scissors</button>
-    
+    <div class = "gameBody">
+        <header>Rock Paper Scissors Game!</header>
+        <div class = "top">
+            <button class = "choiceBtn"id="Rock"><img src="./images/rock.jpg" alt="Rock"></button>
+            <button class = "choiceBtn"id="Paper"><img src="./images/paper.jpg" alt="Paper"></button>
+            <button class = "choiceBtn"id="Scissors"><img src="./images/scissors.jpg" alt="Scissors"></button>
+        </div>
+        <div class="choices">
+            <div>
+                <p>Player Choice</p>
+                <div class="pChoice"></div>
+            </div>
+            <div class="versus">VERSUS</div>
+            <div>
+                <p>Computer Choice</p>
+                <div class="cChoice"></div>                
+            </div>
+        </div>
+        <div class="result"></div>
+        <div class="choices bottom">
+            <div>
+                <p class="player">YOU</p>
+                <p class="pScore"></p>
+            </div>
+            <div>
+                <p class="player">COMPUTER</p>
+                <p class="cScore"></p>
+            </div>
+        </div>
+    </div>
+    <div class="gmResult"></div>
+    <footer>
+        <button class="restart">Restart Game</button>
+    </footer>
 </body>
 </html>
